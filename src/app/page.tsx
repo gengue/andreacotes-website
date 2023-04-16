@@ -18,7 +18,8 @@ function AboutMe() {
     <div className="relative basis-1/2">
       <h1 className="text-3xl text-center my-4 font-bold">About me</h1>
       <p className="my-2">
-        I&apos;m Andrea, a Colombian Biologist based in Norway. I am currently
+        I&apos;m Andrea, a Colombian Biologist based in Norway. I am
+        currently....bla bla
       </p>
       <p className="my-2">
         My research centers on questions related to landscape ecology,
