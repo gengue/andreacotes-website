@@ -18,15 +18,20 @@ function AboutMe() {
     <div className="relative basis-1/2">
       <h1 className="text-3xl text-center my-4 font-bold">About me</h1>
       <p className="my-2">
-        I&apos;m Andrea, a Colombian Biologist based in Norway. I am
-        currently....bla bla
+        I&apos;m Andrea, a Colombian biologist currently based in Norway. I’m
+        analyzing the relationship of the prevalence of pathogenic
+        microorganisms transmitted by ticks and seasonal variation in order to
+        hypothesize possible outcomes under the influence of climate change. I
+        started to work with ticks and tick-borne diseases in Colombia,
+        including ticks from reptile, amphibians, cattle and poultry and
+        continue working with systematics of the Amblyomma genus and their
+        associated bacteria. I have a wide interest in evolution and ecology of
+        ectoparasites and vector-borne pathogens.
       </p>
       <p className="my-2">
-        My research centers on questions related to landscape ecology,
-        ecophysiology, and climate change effects, often using lungless
-        Plethodontid salamanders as a model system. I have a broad interest in
-        many ecological questions and organisms and seek to conduct sound and
-        interesting science
+        Outside my research interest, my favorite animals are dogs, I like yoga,
+        hiking and jogging. I really like Harry Potter and the Simpsons. I enjoy
+        a lot seeing the differences and similarities of people’s cultures.
       </p>
     </div>
   );
