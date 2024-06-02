@@ -11,6 +11,22 @@ const formatDate = (date: Date) => {
 
 const publications = [
   {
+    id: 293,
+    title:
+      "New insights into the molecular phylogeny, biogeographical history, and diversification of Amblyomma ticks (Acari: Ixodidae) based on mitogenomes and nuclear sequences",
+    subtitle: "Parasites and Vectors",
+    date: new Date(2024, 2, 18),
+    url: "https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-024-06131-w",
+  },
+  {
+    id: 666,
+    title:
+      "New insights into the systematics of the afrotropical Amblyomma marmoreum complex (Acari: Ixodidae) and the genome of a novel Rickettsia africae strain using morphological and metagenomic approaches",
+    subtitle: "Ticks and Tick-borne Diseases",
+    date: new Date(2024, 4, 1),
+    url: "https://www.sciencedirect.com/science/article/pii/S1877959X24000165",
+  },
+  {
     id: 1,
     title:
       "Phylogenetic relationships of the Amblyomma cajennense complex (Acari: Ixodidae) at mitogenomic resolution",
