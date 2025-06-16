@@ -1,4 +1,5 @@
 import "./globals.css";
+import { ThemeProvider } from "../components/ThemeProvider";
 
 export const metadata = {
   title: "Andrea Cotes",
@@ -11,8 +12,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body>{children}</body>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
