@@ -1,3 +1,4 @@
+import BirthdayCelebration from "./../components/BirthdayCelebration";
 import Nav from "./../components/Nav";
 import EducationList from "./../components/EducationList";
 import PublicationList from "./../components/PublicationList";
@@ -15,6 +16,7 @@ const font = Montserrat({
 export default function Home() {
 	return (
 		<main className={`${font.className}`}>
+			<BirthdayCelebration />
 			<Nav />
 			<section id="about" className="mt-4 mb-8 container mx-auto max-w-4xl">
 				<div className="flex flex-col md:flex-row justify-center items-center mb-2">

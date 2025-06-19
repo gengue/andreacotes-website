@@ -8,8 +8,9 @@ export default function ProfileCard() {
 				src="/andrea.jpeg"
 				alt="Andrea Cotes Perdomo"
 				width={230}
-				height={330}
+				height={230}
 				priority
+				style={{ objectFit: "cover" }}
 			/>
 			<div className="mt-4 text-primary text-2xl font-bold">
 				Andrea Cotes Perdomo
