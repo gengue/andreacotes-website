@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+
+import { PUBLICATION_HIGHLIGHTS } from "@/lib/publications-highlights";
 
 const ORCID_ID = "0000-0003-2605-9302";
 const ONE_WEEK_SECONDS = 60 * 60 * 24 * 7;
@@ -64,6 +64,16 @@ function sortPublications(a: Publication, b: Publication): number {
   return (b.month ?? 0) - (a.month ?? 0);
 }
 
+function groupByYear(pubs: Publication[]): Array<[number, Publication[]]> {
+  const map = new Map<number, Publication[]>();
+  for (const p of pubs) {
+    const list = map.get(p.year) ?? [];
+    list.push(p);
+    map.set(p.year, list);
+  }
+  return Array.from(map.entries()).sort((a, b) => b[0] - a[0]);
+}
+
 async function fetchPublications(): Promise<Publication[]> {
   try {
     const res = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/works`, {
@@ -83,45 +93,71 @@ async function fetchPublications(): Promise<Publication[]> {
   }
 }
 
-const formatPublicationDate = ({ year, month }: Publication) => {
+function formatDate({ year, month }: Publication): string {
   if (month === null) return String(year);
   return new Date(year, month - 1).toLocaleDateString("en-GB", {
     year: "numeric",
     month: "short",
   });
-};
+}
 
 export default async function PublicationList() {
   const publications = await fetchPublications();
+  const groups = groupByYear(publications);
 
   return (
-    <div className="flex flex-col gap-3">
-      {publications.map((publication) => (
-        <Card
-          key={publication.id}
-          className="transition-shadow hover:shadow-md"
-        >
-          <CardContent className="p-4">
-            <Link
-              href={publication.url}
-              target="_blank"
-              referrerPolicy="no-referrer"
-              className="text-xl font-medium text-primary hover:underline hover:underline-offset-2"
-            >
-              {publication.title}
-            </Link>
-            <p className="mt-1 text-lg text-muted-foreground">
-              {publication.subtitle}
-            </p>
-            <div className="mt-2">
-              <Badge variant="outline" className="text-xs">
-                {formatPublicationDate(publication)}
-              </Badge>
+    <section id="publications" className="py-10 md:py-12">
+      <div className="relative pt-5">
+        <span className="absolute left-0 top-0 h-0.5 w-16 bg-accent" />
+        <h2 className="font-display text-[36px] leading-none text-ink">
+          Publications
+        </h2>
+        <p className="mt-1.5 font-sans text-xs uppercase tracking-[0.16em] text-label">
+          {publications.length} papers · open access where possible
+        </p>
+      </div>
+
+      <div className="mt-6">
+        {groups.map(([year, pubs]) => (
+          <div key={year}>
+            <div className="mt-5 pb-1 border-b border-dashed border-rule font-sans text-[11px] uppercase tracking-[0.18em] text-label first:mt-0">
+              {year}
             </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+            {pubs.map((p) => {
+              const note = PUBLICATION_HIGHLIGHTS[p.id];
+              return (
+                <div
+                  key={p.id}
+                  className="grid grid-cols-1 md:grid-cols-[1fr_200px] gap-2 md:gap-6 py-2.5 border-b border-rule last:border-b-0"
+                >
+                  <div>
+                    <Link
+                      href={p.url}
+                      target="_blank"
+                      referrerPolicy="no-referrer"
+                      className="font-serif font-medium text-[15px] leading-snug text-ink hover:text-accent hover:underline decoration-accent/40"
+                    >
+                      {p.title}
+                    </Link>
+                    <div className="font-serif italic text-[13px] text-ink-mute mt-1">
+                      {p.subtitle}
+                    </div>
+                    <div className="mt-1 font-sans text-[10px] tracking-wider text-label">
+                      {formatDate(p)} · DOI →
+                    </div>
+                  </div>
+                  {note ? (
+                    <div className="font-display text-[15px] leading-snug text-accent pt-1">
+                      {note}
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
