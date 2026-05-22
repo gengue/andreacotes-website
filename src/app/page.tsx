@@ -24,15 +24,6 @@ export default function Home() {
         className="pointer-events-none absolute right-[-40px] top-40 z-0 hidden h-auto w-[180px] rotate-[6deg] opacity-[0.18] dark:opacity-[0.28] lg:block xl:right-8 xl:w-[220px]"
       />
 
-      <Image
-        src="/decorations/flowers.png"
-        alt=""
-        aria-hidden
-        width={524}
-        height={476}
-        className="pointer-events-none absolute left-[-30px] top-[60rem] z-0 hidden h-auto w-[150px] -rotate-[4deg] opacity-[0.30] dark:opacity-[0.45] lg:block xl:left-8 xl:w-[180px]"
-      />
-
       <div className="relative mx-auto max-w-3xl px-4 md:px-0">
         <Hero />
         <EducationList />
