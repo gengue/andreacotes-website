@@ -15,7 +15,7 @@ export default function InterestList() {
   return (
     <section id="off-the-clock" className="py-8 md:py-10">
       <div className="relative pt-4">
-        <span className="absolute left-0 top-0 h-0.5 w-16 bg-accent" />
+        <span aria-hidden="true" className="absolute left-0 top-0 h-0.5 w-16 bg-accent" />
         <h2 className="font-display text-[28px] leading-none text-ink">
           Off the clock
         </h2>

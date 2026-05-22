@@ -108,7 +108,7 @@ export default async function PublicationList() {
   return (
     <section id="publications" className="py-10 md:py-12">
       <div className="relative pt-5">
-        <span className="absolute left-0 top-0 h-0.5 w-16 bg-accent" />
+        <span aria-hidden="true" className="absolute left-0 top-0 h-0.5 w-16 bg-accent" />
         <h2 className="font-display text-[36px] leading-none text-ink">
           Publications
         </h2>
@@ -128,7 +128,9 @@ export default async function PublicationList() {
               return (
                 <div
                   key={p.id}
-                  className="grid grid-cols-1 md:grid-cols-[1fr_200px] gap-2 md:gap-6 py-2.5 border-b border-rule last:border-b-0"
+                  className={`grid grid-cols-1 ${
+                    note ? "md:grid-cols-[1fr_200px] md:gap-6" : ""
+                  } gap-2 py-2.5 border-b border-rule last:border-b-0`}
                 >
                   <div>
                     <Link
@@ -143,7 +145,15 @@ export default async function PublicationList() {
                       {p.subtitle}
                     </div>
                     <div className="mt-1 font-sans text-[10px] tracking-wider text-label">
-                      {formatDate(p)} · DOI →
+                      {formatDate(p)} ·{" "}
+                      <Link
+                        href={p.url}
+                        target="_blank"
+                        referrerPolicy="no-referrer"
+                        className="hover:text-accent"
+                      >
+                        DOI →
+                      </Link>
                     </div>
                   </div>
                   {note ? (

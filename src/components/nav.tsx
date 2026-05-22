@@ -33,7 +33,7 @@ export default function Nav() {
           Andrea Cotes
         </a>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
@@ -63,7 +63,7 @@ export default function Nav() {
           </Sheet>
         </div>
 
-        <div className="hidden lg:flex lg:items-center lg:gap-6">
+        <div className="hidden md:flex md:items-center md:gap-6">
           {sections.map((section) => (
             <a
               key={section.id}

@@ -39,7 +39,7 @@ export default function EducationList() {
   return (
     <section id="education" className="py-10 md:py-12">
       <div className="relative pt-5">
-        <span className="absolute left-0 top-0 h-0.5 w-16 bg-accent" />
+        <span aria-hidden="true" className="absolute left-0 top-0 h-0.5 w-16 bg-accent" />
         <h2 className="font-display text-[36px] leading-none text-ink">
           Education
         </h2>
