@@ -1,11 +1,11 @@
-import BirthdayCelebration from "./../components/BirthdayCelebration";
-import Nav from "./../components/Nav";
-import EducationList from "./../components/EducationList";
-import PublicationList from "./../components/PublicationList";
-import ProfileCard from "./../components/ProfileCard";
-import InterestList from "./../components/InterestList";
-import ContactList from "./../components/ContactList";
-import AboutMe from "./../components/AboutMe";
+import BirthdayCelebration from "@/components/birthday-celebration";
+import Nav from "@/components/nav";
+import EducationList from "@/components/education-list";
+import PublicationList from "@/components/publication-list";
+import ProfileCard from "@/components/profile-card";
+import InterestList from "@/components/interest-list";
+import ContactList from "@/components/contact-list";
+import AboutMe from "@/components/about-me";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
 

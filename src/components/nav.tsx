@@ -4,7 +4,7 @@ import { Dialog, Popover } from "@headlessui/react";
 import { GrClose as CloseIcon } from "react-icons/gr";
 import { HiMenu as MenuIcon } from "react-icons/hi";
 import { Caveat } from "next/font/google";
-import { ThemeToggle } from "./ThemeToggle";
+import { ThemeToggle } from "./theme-toggle";
 
 const caveat = Caveat({
 	weight: ["600"],
