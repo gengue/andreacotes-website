@@ -1,25 +1,23 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Confetti from "react-confetti";
 
-const BirthdayCelebration = () => {
-	const [animationStarted, setAnimationStarted] = useState(false);
+function isTodayBirthday() {
+	const today = new Date();
+	return today.getMonth() === 5 && today.getDate() === 19;
+}
 
-	const isBirthday = useMemo(() => {
-		const today = new Date();
-		return today.getMonth() === 5 && today.getDate() === 19;
-	}, []);
+const BirthdayCelebration = () => {
+	const [animationStarted, setAnimationStarted] = useState(isTodayBirthday);
 
 	useEffect(() => {
-		if (isBirthday) {
-			setAnimationStarted(true);
-			const timer = setTimeout(() => {
-				setAnimationStarted(false);
-			}, 16 * 1000);
-			return () => clearTimeout(timer);
-		}
-	}, [isBirthday]);
+		if (!animationStarted) return;
+		const timer = setTimeout(() => {
+			setAnimationStarted(false);
+		}, 16 * 1000);
+		return () => clearTimeout(timer);
+	}, [animationStarted]);
 
 	if (!animationStarted) {
 		return null;
