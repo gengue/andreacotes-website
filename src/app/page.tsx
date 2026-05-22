@@ -16,21 +16,21 @@ export default function Home() {
       <Nav />
 
       <Image
-        src="/decorations/tick-vitruvian.jpg"
+        src="/decorations/tick-vitruvian.png"
         alt=""
         aria-hidden
-        width={742}
-        height={737}
-        className="pointer-events-none absolute right-[-40px] top-40 z-0 hidden h-auto w-[180px] rotate-[6deg] opacity-[0.10] mix-blend-multiply dark:opacity-[0.18] dark:mix-blend-screen lg:block xl:right-8 xl:w-[220px]"
+        width={501}
+        height={498}
+        className="pointer-events-none absolute right-[-40px] top-40 z-0 hidden h-auto w-[180px] rotate-[6deg] opacity-[0.18] dark:opacity-[0.28] lg:block xl:right-8 xl:w-[220px]"
       />
 
       <Image
-        src="/decorations/flowers.jpg"
+        src="/decorations/flowers.png"
         alt=""
         aria-hidden
-        width={631}
-        height={573}
-        className="pointer-events-none absolute left-[-30px] top-[60rem] z-0 hidden h-auto w-[150px] -rotate-[4deg] opacity-[0.18] mix-blend-multiply dark:opacity-[0.30] dark:mix-blend-screen lg:block xl:left-8 xl:w-[180px]"
+        width={524}
+        height={476}
+        className="pointer-events-none absolute left-[-30px] top-[60rem] z-0 hidden h-auto w-[150px] -rotate-[4deg] opacity-[0.30] dark:opacity-[0.45] lg:block xl:left-8 xl:w-[180px]"
       />
 
       <div className="relative mx-auto max-w-3xl px-4 md:px-0">
@@ -42,12 +42,12 @@ export default function Home() {
 
         <div className="mt-8 px-4 md:px-0">
           <Image
-            src="/decorations/ticks-3-positions.jpg"
+            src="/decorations/ticks-3-positions.png"
             alt=""
             aria-hidden
-            width={1279}
-            height={522}
-            className="pointer-events-none mx-auto block h-auto w-full max-w-2xl opacity-[0.30] mix-blend-multiply dark:opacity-[0.45] dark:mix-blend-screen"
+            width={782}
+            height={319}
+            className="pointer-events-none mx-auto block h-auto w-full max-w-2xl opacity-[0.50] dark:opacity-[0.65]"
           />
         </div>
 
