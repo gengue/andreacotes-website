@@ -7,7 +7,7 @@ export default function Hero() {
         — fieldwork log · entry no. 042
       </p>
 
-      <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-[160px_1fr] md:gap-9">
+      <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-[164px_1fr] md:gap-9">
         <div className="-rotate-[1.8deg] inline-block border-[6px] border-photo-frame shadow-[0_4px_10px_rgba(0,0,0,0.12)] w-fit">
           <Image
             src="/andrea.jpeg"
