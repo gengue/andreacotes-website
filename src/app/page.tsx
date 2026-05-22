@@ -1,76 +1,59 @@
-import { Montserrat } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 
-import AboutMe from "@/components/about-me";
 import BirthdayCelebration from "@/components/birthday-celebration";
 import ContactList from "@/components/contact-list";
 import EducationList from "@/components/education-list";
+import Hero from "@/components/hero";
 import InterestList from "@/components/interest-list";
 import Nav from "@/components/nav";
-import ProfileCard from "@/components/profile-card";
 import PublicationList from "@/components/publication-list";
-
-const font = Montserrat({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className={font.className}>
+    <main className="relative overflow-hidden">
       <BirthdayCelebration />
       <Nav />
 
-      <section
-        id="about"
-        className="container mx-auto max-w-4xl px-4 py-12"
-      >
-        <div className="flex flex-col items-center justify-center md:flex-row">
-          <div className="basis-2/5">
-            <ProfileCard />
-          </div>
-          <div className="basis-3/5 p-4">
-            <AboutMe />
-          </div>
-        </div>
-        <div className="mt-8 flex flex-col gap-6 md:mt-12 md:flex-row md:gap-8">
-          <EducationList />
-          <InterestList />
-        </div>
-      </section>
+      <Image
+        src="/decorations/tick-vitruvian.png"
+        alt=""
+        aria-hidden
+        width={501}
+        height={498}
+        className="pointer-events-none absolute right-[-40px] top-40 z-0 hidden h-auto w-[180px] rotate-[6deg] opacity-[0.18] dark:opacity-[0.28] lg:block xl:right-8 xl:w-[220px]"
+      />
 
-      <section
-        id="publications"
-        className="container mx-auto max-w-4xl px-4 py-12"
-      >
-        <h2 className="mb-8 text-center text-3xl font-bold tracking-tight">
-          Publications
-        </h2>
+      <div className="relative mx-auto max-w-3xl px-4 md:px-0">
+        <Hero />
+        <EducationList />
         <PublicationList />
-      </section>
-
-      <section
-        id="contact"
-        className="container mx-auto min-h-[12rem] px-4 py-12"
-      >
-        <h2 className="mb-4 text-center text-3xl font-bold tracking-tight">
-          Get in touch
-        </h2>
-        <p className="text-center text-lg text-muted-foreground">
-          I would love to hear from you if you would like to collaborate or have
-          questions!
-        </p>
+        <InterestList />
         <ContactList />
-      </section>
 
-      <footer className="my-8 text-center text-muted-foreground">
-        Made with ❤ by my handsome husband{" "}
-        <Link
-          className="underline transition-colors hover:text-primary"
-          href="https://www.genesisguerrero.com/"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          Genesis Guerrero
-        </Link>
-      </footer>
+        <div className="mt-8 px-4 md:px-0">
+          <Image
+            src="/decorations/ticks-3-positions.png"
+            alt=""
+            aria-hidden
+            width={782}
+            height={319}
+            className="pointer-events-none mx-auto block h-auto w-full max-w-2xl opacity-[0.50] dark:opacity-[0.65]"
+          />
+        </div>
+
+        <footer className="mt-2 mb-10 py-6 text-center font-display text-lg text-ink-mute">
+          Made with <span className="text-accent">♥</span> by my handsome husband{" "}
+          <Link
+            className="text-ink underline decoration-accent/50 hover:decoration-accent hover:text-accent transition-colors"
+            href="https://www.genesisguerrero.com/"
+            target="_blank"
+            referrerPolicy="no-referrer"
+          >
+            Genesis Guerrero
+          </Link>
+        </footer>
+      </div>
     </main>
   );
 }

@@ -1,7 +1,12 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+type Education = {
+  id: number;
+  institution: string;
+  title: string;
+  startYear: number;
+  endYear: number | null;
+};
 
-const education = [
+const education: Education[] = [
   {
     id: 1,
     institution: "University of South-Eastern Norway",
@@ -26,26 +31,44 @@ const education = [
   },
 ];
 
+function formatRange(start: number, end: number | null): string {
+  return `${start}–${end ?? "Present"}`;
+}
+
 export default function EducationList() {
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle className="text-xl">Education</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
+    <section id="education" className="py-10 md:py-12">
+      <div className="relative pt-5">
+        <span aria-hidden="true" className="absolute left-0 top-0 h-0.5 w-16 bg-accent" />
+        <h2 className="font-display text-[36px] leading-none text-ink">
+          Education
+        </h2>
+      </div>
+
+      <div className="mt-5">
         {education.map((item, index) => (
-          <div key={item.id}>
-            <div className="text-lg font-semibold text-primary">
-              {item.institution}
+          <div
+            key={item.id}
+            className={`grid grid-cols-[120px_1fr] gap-4 py-2.5 ${
+              index < education.length - 1
+                ? "border-b border-rule"
+                : ""
+            }`}
+          >
+            <span className="whitespace-nowrap font-sans text-xs tracking-wider text-label pt-1">
+              {formatRange(item.startYear, item.endYear)}
+            </span>
+            <div>
+              <div className="font-serif font-medium text-base text-ink">
+                {item.institution}
+              </div>
+              <div className="font-sans text-[13px] text-ink-mute mt-0.5">
+                {item.title}
+              </div>
             </div>
-            <div className="text-base text-muted-foreground">{item.title}</div>
-            <div className="text-sm text-muted-foreground/70">
-              {item.startYear} - {item.endYear ?? "Present"}
-            </div>
-            {index < education.length - 1 && <Separator className="mt-4" />}
           </div>
         ))}
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }
