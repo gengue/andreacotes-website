@@ -20,7 +20,7 @@ export default function AboutMe() {
             from reptiles, amphibians, cattle, and poultry. I continue
             researching the systematics of the Amblyomma genus and their
             associated bacteria, with broad interests in the evolution and
-            ectoparasites and vector-borne pathogens.
+            ecology of ectoparasites and vector-borne pathogens.
           </p>
         </div>
       </CardContent>

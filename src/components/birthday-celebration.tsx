@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import Confetti from "react-confetti";
 
 function isTodayBirthday() {
@@ -8,18 +8,25 @@ function isTodayBirthday() {
 	return today.getMonth() === 5 && today.getDate() === 19;
 }
 
+function subscribe() {
+	return () => {};
+}
+
 const BirthdayCelebration = () => {
-	const [animationStarted, setAnimationStarted] = useState(isTodayBirthday);
+	const isClientBirthday = useSyncExternalStore(
+		subscribe,
+		isTodayBirthday,
+		() => false,
+	);
+	const [dismissed, setDismissed] = useState(false);
 
 	useEffect(() => {
-		if (!animationStarted) return;
-		const timer = setTimeout(() => {
-			setAnimationStarted(false);
-		}, 16 * 1000);
+		if (!isClientBirthday) return;
+		const timer = setTimeout(() => setDismissed(true), 16 * 1000);
 		return () => clearTimeout(timer);
-	}, [animationStarted]);
+	}, [isClientBirthday]);
 
-	if (!animationStarted) {
+	if (!isClientBirthday || dismissed) {
 		return null;
 	}
 
