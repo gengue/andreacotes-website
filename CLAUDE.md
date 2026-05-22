@@ -4,15 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is Andrea Cotes' personal portfolio website built with Next.js 13.3 using the experimental App Router. It's a single-page application showcasing academic and personal information.
+This is Andrea Cotes' personal portfolio website built with Next.js 16 using the App Router. It's a single-page application showcasing academic and personal information.
 
 ## Technology Stack
 
-- **Framework**: Next.js 15.3.3 with App Router
-- **Language**: TypeScript 5.8.3
-- **Styling**: Tailwind CSS 4.1.10
-- **UI Components**: Headless UI, React Icons
-- **Package Manager**: pnpm (pnpm-lock.yaml present)
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript 5.8
+- **Styling**: Tailwind CSS 4.3
+- **UI Components**: shadcn/ui (Radix UI primitives) — components in `src/components/ui/`
+- **Icons**: lucide-react
+- **Theming**: next-themes (light / dark / system)
+- **Package Manager**: pnpm
 
 ## Development Commands
 
@@ -25,22 +27,28 @@ pnpm lint     # Run ESLint
 
 ## Project Architecture
 
-The codebase follows Next.js 13 App Router structure:
+The codebase follows Next.js App Router structure:
 
 ```
 src/
-├── app/                    # Next.js App Router pages
-│   ├── layout.tsx         # Root layout with metadata
-│   ├── page.tsx           # Homepage
-│   └── dio/page.tsx       # Subpage route
-└── components/            # Reusable React components
-    ├── AboutMe.tsx        # About section
-    ├── ContactList.tsx    # Contact information
-    ├── EducationList.tsx  # Education history
-    ├── InterestList.tsx   # Personal interests
-    ├── Nav.tsx            # Navigation
-    ├── ProfileCard.tsx    # Profile display
-    └── PublicationList.tsx # Academic publications
+├── app/                        # Next.js App Router
+│   ├── layout.tsx              # Root layout, ThemeProvider
+│   ├── page.tsx                # Homepage
+│   ├── globals.css             # Tailwind + theme tokens
+│   └── dio/page.tsx            # Subpage
+├── components/                 # Feature components (kebab-case)
+│   ├── about-me.tsx
+│   ├── birthday-celebration.tsx
+│   ├── contact-list.tsx
+│   ├── education-list.tsx
+│   ├── interest-list.tsx
+│   ├── nav.tsx
+│   ├── profile-card.tsx
+│   ├── publication-list.tsx
+│   ├── theme-provider.tsx
+│   ├── theme-toggle.tsx
+│   └── ui/                     # shadcn primitives
+└── lib/utils.ts                # cn() helper
 ```
 
 ## Key Considerations

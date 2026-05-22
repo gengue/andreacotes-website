@@ -4,7 +4,7 @@ export default function KonoDioDa() {
   return (
     <Image
       src="/andrea_dio.jpg"
-      layout="fill"
+      fill
       alt="Kono Dio Da - Andrea Cotes"
     />
   );

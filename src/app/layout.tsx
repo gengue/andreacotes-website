@@ -1,5 +1,5 @@
 import "./globals.css";
-import { ThemeProvider } from "../components/ThemeProvider";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata = {
   title: "Andrea Cotes",
@@ -16,8 +16,8 @@ export default function RootLayout({
       <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
+          defaultTheme="system"
+          enableSystem
         >
           {children}
         </ThemeProvider>
