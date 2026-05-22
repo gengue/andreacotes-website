@@ -3,11 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section id="about" className="py-12 md:py-16">
-      <p className="font-display text-lg text-label">
-        — fieldwork log · entry no. 042
-      </p>
-
-      <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-[164px_1fr] md:gap-9">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-[164px_1fr] md:gap-9">
         <div className="-rotate-[1.8deg] inline-block border-[6px] border-photo-frame shadow-[0_4px_10px_rgba(0,0,0,0.12)] w-fit">
           <Image
             src="/andrea.jpeg"
@@ -24,15 +20,17 @@ export default function Hero() {
             Andrea Cotes Perdomo
           </h1>
           <p className="mt-3 font-sans text-xs uppercase tracking-[0.16em] text-ink-mute">
-            PhD ecology · ticks &amp; climate · Colombia → Norway
+            PhD in Ecology · University of South-Eastern Norway
           </p>
           <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
-            Started with ticks on lizards in Magdalena. Now: how do seasons
-            shift the bugs — and the bacteria they carry — as the Nordic spring
-            keeps arriving earlier?{" "}
-            <span className="font-display text-[17px] text-accent">
-              ↙ that&apos;s the whole thesis
-            </span>
+            I am a Colombian biologist based in Norway, researching the
+            seasonal ecology of ticks and the pathogens they transmit. My
+            doctoral work at the University of South-Eastern Norway examines
+            how shifting climate patterns influence pathogen prevalence in{" "}
+            <i>Ixodes ricinus</i> populations across southern Norway. Earlier
+            research in Colombia focused on the systematics of the genus{" "}
+            <i>Amblyomma</i> and tick-borne pathogens of reptiles, amphibians,
+            and domestic animals.
           </p>
         </div>
       </div>

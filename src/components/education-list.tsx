@@ -32,7 +32,7 @@ const education: Education[] = [
 ];
 
 function formatRange(start: number, end: number | null): string {
-  return `${start} — ${end ?? "Present"}`;
+  return `${start}–${end ?? "Present"}`;
 }
 
 export default function EducationList() {
