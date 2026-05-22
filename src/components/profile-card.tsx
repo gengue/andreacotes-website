@@ -1,24 +1,28 @@
-import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function ProfileCard() {
-	return (
-		<div className="flex flex-col justify-center items-center px-2">
-			<Image
-				className="relative rounded-full"
-				src="/andrea.jpeg"
-				alt="Andrea Cotes Perdomo"
-				width={230}
-				height={230}
-				priority
-				style={{ objectFit: "cover" }}
-			/>
-			<div className="mt-4 text-primary text-2xl font-bold">
-				Andrea Cotes Perdomo
-			</div>
-			<div className="text-foreground/80 text-lg">PhD Candidate in Ecology</div>
-			<div className="text-foreground/80 text-lg">
-				University of South-Eastern, Norway
-			</div>
-		</div>
-	);
+  return (
+    <Card className="border-0 bg-transparent shadow-none">
+      <CardContent className="flex flex-col items-center px-2">
+        <Avatar className="size-[230px]">
+          <AvatarImage
+            src="/andrea.jpeg"
+            alt="Andrea Cotes Perdomo"
+            className="object-cover"
+          />
+          <AvatarFallback>AC</AvatarFallback>
+        </Avatar>
+        <div className="mt-4 text-2xl font-bold text-primary">
+          Andrea Cotes Perdomo
+        </div>
+        <div className="text-lg text-muted-foreground">
+          PhD Candidate in Ecology
+        </div>
+        <div className="text-lg text-muted-foreground">
+          University of South-Eastern, Norway
+        </div>
+      </CardContent>
+    </Card>
+  );
 }
