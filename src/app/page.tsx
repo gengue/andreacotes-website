@@ -3,7 +3,6 @@ import Link from "next/link";
 import BirthdayCelebration from "@/components/birthday-celebration";
 import ContactList from "@/components/contact-list";
 import EducationList from "@/components/education-list";
-import FieldSites from "@/components/field-sites";
 import Hero from "@/components/hero";
 import InterestList from "@/components/interest-list";
 import Nav from "@/components/nav";
@@ -18,7 +17,6 @@ export default function Home() {
       <div className="mx-auto max-w-3xl px-4 md:px-0">
         <Hero />
         <EducationList />
-        <FieldSites />
         <PublicationList />
         <InterestList />
         <ContactList />

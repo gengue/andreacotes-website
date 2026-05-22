@@ -120,7 +120,7 @@ export default async function PublicationList() {
       <div className="mt-6">
         {groups.map(([year, pubs]) => (
           <div key={year}>
-            <div className="mt-5 pb-1 border-b border-dashed border-rule font-sans text-[11px] uppercase tracking-[0.18em] text-label first:mt-0">
+            <div className="mt-5 pb-1 border-b border-dashed border-rule font-sans text-[12px] uppercase tracking-[0.18em] text-label first:mt-0">
               {year}
             </div>
             {pubs.map((p) => {
@@ -137,14 +137,14 @@ export default async function PublicationList() {
                       href={p.url}
                       target="_blank"
                       referrerPolicy="no-referrer"
-                      className="font-serif font-medium text-[15px] leading-snug text-ink hover:text-accent hover:underline decoration-accent/40"
+                      className="font-serif font-medium text-[17px] leading-snug text-ink hover:text-accent hover:underline decoration-accent/40"
                     >
                       {p.title}
                     </Link>
-                    <div className="font-serif italic text-[13px] text-ink-mute mt-1">
+                    <div className="font-serif italic text-[14px] text-ink-mute mt-1">
                       {p.subtitle}
                     </div>
-                    <div className="mt-1 font-sans text-[10px] tracking-wider text-label">
+                    <div className="mt-1 font-sans text-[11px] tracking-wider text-label">
                       {formatDate(p)} ·{" "}
                       <Link
                         href={p.url}
@@ -157,7 +157,7 @@ export default async function PublicationList() {
                     </div>
                   </div>
                   {note ? (
-                    <div className="font-display text-[15px] leading-snug text-accent pt-1">
+                    <div className="font-display text-[17px] leading-snug text-accent pt-1">
                       {note}
                     </div>
                   ) : null}

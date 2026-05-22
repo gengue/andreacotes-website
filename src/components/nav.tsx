@@ -15,7 +15,6 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 const sections = [
   { id: "about", name: "About" },
-  { id: "fieldwork", name: "Fieldwork" },
   { id: "publications", name: "Publications" },
   { id: "contact", name: "Contact" },
 ];
