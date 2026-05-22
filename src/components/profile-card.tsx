@@ -17,7 +17,7 @@ export default function ProfileCard() {
           Andrea Cotes Perdomo
         </div>
         <div className="text-lg text-muted-foreground">
-          PhD Candidate in Ecology
+          PhD in Ecology
         </div>
         <div className="text-lg text-muted-foreground">
           University of South-Eastern, Norway

@@ -7,7 +7,7 @@ const education = [
     institution: "University of South-Eastern Norway",
     title: "Doctor of Philosophy in Ecology",
     startYear: 2023,
-    endYear: null,
+    endYear: 2026,
   },
   {
     id: 2,
