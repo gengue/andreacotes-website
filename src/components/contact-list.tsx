@@ -1,20 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Twitter } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-const contactLinks = [
+type ContactLink = {
+  id: string;
+  name: string;
+  url: string;
+  icon: React.ReactNode;
+};
+
+const contactLinks: ContactLink[] = [
   {
     id: "linkedin",
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/andrea-paola-cotes-perdomo-5a65a259/",
-    icon: <Linkedin className="size-6" />,
+    icon: <Linkedin className="size-5" />,
   },
   {
     id: "twitter",
     name: "Twitter",
     url: "https://twitter.com/andreacotes1",
-    icon: <Twitter className="size-6" />,
+    icon: <Twitter className="size-5" />,
   },
   {
     id: "researchgate",
@@ -23,9 +29,10 @@ const contactLinks = [
     icon: (
       <Image
         src="/research_gate_logo.png"
-        alt="Research Gate logo"
-        width={24}
-        height={24}
+        alt=""
+        width={20}
+        height={20}
+        className="opacity-80"
       />
     ),
   },
@@ -33,25 +40,34 @@ const contactLinks = [
 
 export default function ContactList() {
   return (
-    <div className="mt-4 flex items-center justify-center gap-3">
-      {contactLinks.map((link) => (
-        <Button
-          key={link.id}
-          asChild
-          variant="outline"
-          size="icon"
-          aria-label={link.name}
-        >
+    <section id="contact" className="py-10 md:py-12">
+      <div className="relative pt-5">
+        <span className="absolute left-0 top-0 h-0.5 w-16 bg-accent" />
+        <h2 className="font-display text-[36px] leading-none text-ink">
+          Get in touch
+        </h2>
+      </div>
+
+      <p className="mt-3 font-serif text-base text-ink-soft">
+        Always glad to hear from collaborators, students, and anyone interested
+        in ticks or what they carry.
+      </p>
+
+      <div className="mt-5 flex items-center gap-5">
+        {contactLinks.map((link) => (
           <Link
+            key={link.id}
             href={link.url}
             target="_blank"
             referrerPolicy="no-referrer"
+            aria-label={link.name}
             title={link.name}
+            className="text-ink hover:text-accent transition-colors"
           >
             {link.icon}
           </Link>
-        </Button>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 }
